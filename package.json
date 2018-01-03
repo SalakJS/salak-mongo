@@ -1,0 +1,33 @@
+{
+  "name": "salak-mongo",
+  "version": "1.0.0",
+  "description": "mongoose for salak",
+  "main": "index.js",
+  "repository": "SalakJS/salak-mongo",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest",
+    "test-cov": "npm run test -- --coverage"
+  },
+  "keywords": [
+    "salak",
+    "mongoose"
+  ],
+  "author": "wengeek <wenwei897684475@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "mongoose": "^4.13.7"
+  },
+  "devDependencies": {
+    "eslint": "^4.13.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "jest": "^22.0.4",
+    "salak": "^1.0.5",
+    "supertest": "^3.0.0"
+  }
+}
