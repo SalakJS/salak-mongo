@@ -37,7 +37,7 @@ module.exports = {
     }
   ],
   mongo: {
-    uri: 'mongo://localhost:27017/yourdb'
+    uri: 'mongodb://localhost:27017/yourdb'
   }
 }
 ```
