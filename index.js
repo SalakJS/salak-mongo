@@ -18,7 +18,7 @@ module.exports = ({
     }, options, client.options))
 
     db.on('error', (err) => {
-      this.app.logger.error(err)
+      app.logger.error(err)
     })
 
     return db
@@ -68,7 +68,7 @@ module.exports = ({
 
         const models = this.app.models[module]
         if (!models || !models[name]) {
-          this.logger.app.error(`cannot find model: ${name}`)
+          this.app.logger.error(`cannot find model: ${name}`)
           return
         }
 

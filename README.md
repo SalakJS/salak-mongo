@@ -26,7 +26,7 @@ $ npm install --save salak-mongo
 
 ### Config
 
-In middleware:
+In plugin:
 
 ```javascript
 module.exports = {
@@ -85,6 +85,13 @@ module.exports = User
 
 ## API
 
+### Options
+
+- dirname {String} directory for storing models, default `model`
+- client {Object} mongoose connection info, like { uri: '', options: {} }
+- clients {Object} mongoose connections, { key: client }
+- options {Object} mongoose global connection options
+
 ### mongoose
 
 Ref to [mongoose](https://github.com/Automattic/mongoose)
@@ -93,8 +100,8 @@ Ref to [mongoose](https://github.com/Automattic/mongoose)
 
 The function which register on Service
 
-- name: model filename
-- module: the model located in, default: the current module
+- name {String} model filename
+- module {String} the model located in, default: the current module
 
 @return model
 
