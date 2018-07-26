@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const assert = require('assert')
 const is = require('is-type-of')
 
+const { Schema } = mongoose
 mongoose.Promise = global.Promise
 
 module.exports = ({
@@ -21,6 +22,7 @@ module.exports = ({
       app.logger.error(err)
     })
 
+    db.Schema = Schema
     return db
   }
 
@@ -51,7 +53,7 @@ module.exports = ({
         return obj({
           db,
           dbs,
-          Schema: mongoose.Schema
+          Schema
         }, app)
       }
 
