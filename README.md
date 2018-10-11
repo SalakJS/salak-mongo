@@ -88,6 +88,7 @@ module.exports = User
 ### Options
 
 - dirname {String} directory for storing models, default `model`
+- extend {Array<String>} extend properties, default `['service']`
 - client {Object} mongoose connection info, like { uri: '', options: {} }
 - clients {Object} mongoose connections, { key: client }
 - options {Object} mongoose global connection options

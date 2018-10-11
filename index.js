@@ -5,8 +5,11 @@ const is = require('is-type-of')
 const { Schema } = mongoose
 mongoose.Promise = global.Promise
 
+const ALLOW_EXTENDS = ['base', 'controller', 'service', 'schedule']
+
 module.exports = ({
   dirname = 'model',
+  extend = ['service'],
   client,
   clients,
   options
@@ -19,7 +22,7 @@ module.exports = ({
     }, options, client.options))
 
     db.on('error', (err) => {
-      app.logger.error(err)
+      app.emit('error', err)
     })
 
     db.Schema = Schema
@@ -61,8 +64,14 @@ module.exports = ({
     }
   })
 
-  return {
-    service: {
+  const extension = {}
+
+  extend = Array.isArray(extend) ? extend : [extend]
+  extend = extend.filter((item) => ALLOW_EXTENDS.indexOf(item) !== -1)
+  extend = extend.length ? extend : ['service']
+
+  extend.forEach((item) => {
+    extension[item] = {
       [dirname] (name, module) {
         if (!module) {
           module = this.module
@@ -77,7 +86,9 @@ module.exports = ({
         return models[name]
       }
     }
-  }
+  })
+
+  return extension
 }
 
 module.exports.mongoose = mongoose
