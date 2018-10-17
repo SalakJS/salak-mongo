@@ -1,4 +1,5 @@
 import * as Salak from 'salak'
+import * as mongoose from 'mongoose'
 
 type mongoClient = {
   uri: string
@@ -14,5 +15,9 @@ declare module 'salak' {
       clients: Salak.PlainObject<mongoClient>
       options: Salak.PlainObject
     }
+  }
+
+  interface Service {
+    model (name: string, module?: string): mongoose.Model<mongoose.Document>
   }
 }
