@@ -10,7 +10,7 @@ declare module 'salak' {
   interface SalakConfig {
     mongo: {
       dirname: string
-      extend: string[]
+      extend: string | string[]
       client: mongoClient
       clients: Salak.PlainObject<mongoClient>
       options: Salak.PlainObject

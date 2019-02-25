@@ -90,6 +90,7 @@ module.exports = User
 - dirname {String} directory for storing models, default `model`
 - extend {Array<String>} extend properties, default `['service']`
 - client {Object} mongoose connection info, like { uri: '', options: {} }
+- client.options {Object} default `{ useNewUrlParser: true, server: { reconnectTries: 60 * 60 * 24, reconnectInterval: 1000 } }`
 - clients {Object} mongoose connections, { key: client }
 - options {Object} mongoose global connection options
 
