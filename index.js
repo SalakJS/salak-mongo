@@ -19,10 +19,10 @@ module.exports = ({
   const createDatabase = (client) => {
     const db = mongoose.createConnection(client.uri, Object.assign({
       useNewUrlParser: true,
-      server: { // retry in one day
-        reconnectTries: 60 * 60 * 24,
-        reconnectInterval: 1000
-      }
+      useCreateIndex: true,
+      // retry in one day
+      reconnectTries: 60 * 60 * 24,
+      reconnectInterval: 1000
     }, options, client.options))
 
     db.on('error', (err) => {
