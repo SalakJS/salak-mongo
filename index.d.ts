@@ -6,6 +6,8 @@ type mongoClient = {
   options: Salak.PlainObject
 }
 
+export import Mongoose = mongoose
+
 declare module 'salak' {
   interface SalakConfig {
     mongo: {
