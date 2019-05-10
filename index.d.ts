@@ -11,6 +11,7 @@ export import mongoose = mongoose
 declare module 'salak' {
   interface SalakConfig {
     mongo: {
+      enable: boolean
       dirname: string
       extend: string | string[]
       client: mongoClient
